@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: contso-air
+  namespace: dev
+  labels:
+    app.kubernetes.io/name: contso-air
+    kubernetes.azure.com/generator: devhub
+spec:
+  type: LoadBalancer
+  selector:
+    app.kubernetes.io/name: contso-air
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
